@@ -45,6 +45,20 @@ details summary {
     user-select: none; 
 }
 
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::details-marker {
+  display: none;
+}
+
 details summary h2 {
 	font-size: 1.2rem;
 	margin: 0;
