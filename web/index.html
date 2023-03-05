@@ -1,0 +1,299 @@
+<!DOCTYPE html> 
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> 
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--> 
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--> 
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]--> 
+<html> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>Should I use an accordion?</title> 
+  <meta name="description" content=""> 
+  <meta name="viewport" content="width=device-width  initial-scale=1"> 
+  <style>
+
+
+.wrapper {
+    background-color: #fafbff;
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+/* Accordion Styling */
+
+
+details summary {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid black;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    background: lightblue;
+    
+    cursor: pointer;
+
+
+    list-style: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    user-select: none; 
+}
+
+details summary h2 {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+/* Chevron Icons */
+
+.chevron::before, .chevron::after, .chev::before, .chev::after {
+    position: absolute;
+    content: "";
+    right: 30px;
+    height: 2px;
+    width: 12px;
+    border-radius: 2px;
+    background-color: #000;
+    transition: transform .2s ease-in-out;
+}
+
+.chevron {
+    position: absolute;
+    right: 0;
+    transition: transform .2s ease-in-out;
+}
+details[open] .chevron {
+    transform: translateY(-4px);
+    transition: transform .2s ease-in-out;
+}
+
+.chevron::before, .chev::after {
+    transform: rotate(45deg);
+}
+.chev::before, .chevron::after {
+    transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::before {
+    transform: rotate(45deg);
+}
+details[open] .chev::before {
+    transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::after {
+    transform: translateY(7px) rotate(-45deg);
+}
+details[open] .chev::after {
+    transform: translateY(7px) translateX(7px) rotate(45deg);
+}
+
+
+/* Style & Animate Siblings */
+
+.content {
+    padding: 0 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 18px;
+}
+
+.animate {
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+    transition-delay: 0s;
+}
+
+details[open] ~ .animate {
+    max-height: 100vh;
+    overflow: hidden;
+    transition: all .5s ease;
+    transition-delay: 0s;
+}
+
+
+
+
+
+
+
+code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: rgba(175,184,193,0.2);
+    border-radius: 6px;
+    font-family: ui-monospace, monospace;
+}
+
+  </style>
+ </head> 
+ <body> 
+  <!--[if lt IE 7]> 
+   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p> 
+  <![endif]-->
+  
+  <h1>Should I use an accordion?</h1>
+  
+   <div class="wrapper">
+
+        <div>
+            <details>
+                <summary><h2>Should I use an accordion?</h2>
+                    <div class="chevron">
+                        <span class="chev"></span>
+                    </div>
+                </summary>
+            </details>
+            <div class="animate">
+                <div class="content">
+                    <p><a href="https://www.nngroup.com/articles/accordions-complex-content/">Probably not</a>.</p>
+                    
+                    <p>What's the problem with accordions or collapsables? Continue reading the other accordions below!</p> 
+                </div>
+            </div>
+        </div>
+
+         <div>
+    <details>
+        <summary><h2>Click currency</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+            <p>People are lazy. They treat their time and effort like currency. To open an accordion the user will have to spend a little bit of their time and effort clicking to see the contents of an accordion item. This is fine if the user finds good value for the click, however if it's just there to make the page appear shorter, it's actually making the experience worse as the user will have to spend their time and effort opening the accordions. It is much less work for the user to just scroll down a longer page than it is to hide the content behind an accordion.</p> 
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <details>
+        <summary><h2>Forces interaction</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+            <p>Using accordions forces the user to interact with the page in order to discover content. If the idea is to be able to fit more information on the page, but still get it in front of the visitor's eyeballs, then accordions will make it harder for users to see your content. People can scan content a lot easier if there is no interaction required.</p>
+            
+            <p>You also can't print (or print to PDF) pages with accordions without manually opening all the accordions or possibly doing some extra work to make sure all the items are expanded in a separate print stylesheet.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <details>
+        <summary><h2>Accessibility</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+            <p>As with any interactive component, accordions need to have some good accessibility considerations. Depending on the implementation, you may need to notify the user when content gets opened or closed, indicate what bits are clickable and what they will do when clicked, make sure the click targets are large enough, and write the HTML semantically.</p> 
+            
+            <p>Most screen readers already allow the user to tab through the headings on a page, so adding accordions brings extra effort needed to open each item as they tab through the page. It's redundant to hide the content for screen readers.</p> 
+            
+            <p><a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/">Learn more about accessibility for accordions</a>.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <details>
+        <summary><h2>Dev complexity</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+            <p>Did you know that <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> are actually <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">web components</a>?  This can have some special considerations that might be unexpected, such as issues with inheritance.</p> 
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <details>
+        <summary><h2>So, when might it be a <em>good</em> time to use an accordion?</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+            <p>If you can work through the accessibility and coding challenges above, there are a few ways accordions might be a good tool for the job.</p> 
+            
+            <h3>Frequently asked questions</h3>
+            <p>FAQs might be a good time to use accordions. The use-case here is that visitors are looking for a quick answer to a common question, so being able to quickly scan the page for the little pice of content they are looking for will likely yield a return that was worth the value of clicking, and actually helps the visitor accomplish their objective faster and easier.</p>
+            
+            <h3>Large list of reports</h3>
+            
+            <p>Sometimes we may have a page that is required to list a bunch of reports. Usually people visiting these pages are looking for a specific report, so being able to group these reports by year or topic might make it easier for the visitor to find what they are looking for.</p>
+            
+            <h3>With great power comes great responsibility</h3>
+            
+            <p>Hopefully this information has been helpful for you to be able to make a more informed decision around accordions and points you in the right direction for data on how to best use accordions.</p>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <details>
+        <summary><h2>Acknowledgements</h2>
+            <div class="chevron">
+                <span class="chev"></span>
+            </div>
+        </summary>
+    </details>
+    <div class="animate">
+        <div class="content">
+			<ul>
+				<li>Inspired by <a href="https://shouldiuseacarousel.com/">Should I use a carousel?</a>.</li>
+				<li>Initial list taken from experience and <a href="https://www.nngroup.com/articles/accordions-complex-content/">Nielson Norman Group</a>.</li>
+				<li>Accordion implementation modified from <a href="https://codepen.io/MoyCode/pen/PoQBGjL">No Javascript Animated Accordion</a> by <a href="https://codepen.io/MoyCode">@MoyCode on CodePen</a>.</li>
+				<li>Contributors:</li>
+				<ul>
+					<li><a href="https://mastodon.social/@jrearick" rel="me">@jrearick@mastodon.social</a> - Creator</li>
+					<li><a href="https://labyrinth.social/@starshaped" rel="me">‪@starshaped@labyrinth.social‬</a></li>
+				</ul>
+				<li><a href="https://github.com/jrearick/shouldiuseanaccordion-com">Contributions / Pull Requests welcome</a></li>
+			</ul>
+			
+        </div>
+    </div>
+</div>
+ </body> 
+</html>
